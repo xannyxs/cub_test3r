@@ -24,7 +24,10 @@ echo "VALID MAPS"
 run_valid_map MAPS/VALID/basic.cub
 run_valid_map MAPS/VALID/big_map.cub
 run_valid_map MAPS/VALID/double_extension.cub.cub
-run_non_valid_map MAPS/VALID/valid_hole.cub
+run_valid_map MAPS/VALID/valid_hole.cub
+run_valid_map MAPS/VALID/42.cub
+run_valid_map MAPS/VALID/corridor.cub
+run_valid_map MAPS/VALID/subject.cub
 
 # NON_VALID MAPS
 echo #Newline
