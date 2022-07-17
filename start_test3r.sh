@@ -1,40 +1,8 @@
 #!/usr/bin/env bash
 
-EXE=$1/cub3d
+source PRIVATE/script_functions.sh
 
-# Functions
-check_if_non_valid()
-{
-	if [ $? -eq 0 ]; then
-		echo "Did not return an error or exit code is wrong"
-		echo "Should atleast be > 0"
-	fi
-}
-
-run_non_valid_map()
-{
-	$EXE $1 2> /dev/null
-	check_if_non_valid
-}
-
-check_if_valid()
-{
-	if [ ! $? -eq 0 ]; then
-		echo "You returned an error or returned the wrong exit code"
-		echo "Should be 0"
-	fi
-	kill -INT ${_pid}
-}
-
-run_valid_map()
-{
-	$EXE $1 & _pid=$!
-	check_if_valid
-}
-
-### END FUNCTIONS
-
-
+# -- PUBLIC --
 
 #Checking if file exists
 if [ $# -eq 0 ]; then
@@ -49,17 +17,26 @@ fi
 
 make -C $1
 
+echo #newline
+
 # Valid MAPS
-run_valid_map MAPS/basic.cub
-run_valid_map MAPS/double_extension.cub.cub
+echo "VALID MAPS"
+run_valid_map MAPS/VALID/basic.cub
+run_valid_map MAPS/VALID/big_map.cub
+run_valid_map MAPS/VALID/double_extension.cub.cub
+run_non_valid_map MAPS/VALID/valid_hole.cub
 
 # NON_VALID MAPS
-$run_non_valid_map MAPS/empty.cub
-$run_non_valid_map MAPS/wrong_extension.ber
-$run_non_valid_map MAPS/wrong_extension2.cub.ber
-$run_non_valid_map MAPS/noplayer.cub
-$run_non_valid_map MAPS/unknown_char.cub
+echo #Newline
+echo "NON VALID MAPS"
+run_non_valid_map MAPS/NONVALID/empty.cub
+run_non_valid_map MAPS/NONVALID/wrong_extension.ber
+run_non_valid_map MAPS/NONVALID/wrong_extension2.cub.ber
+run_non_valid_map MAPS/NONVALID/noplayer.cub
+run_non_valid_map MAPS/NONVALID/two_player.cub
+run_non_valid_map MAPS/NONVALID/unknown_char.cub
+run_non_valid_map MAPS/NONVALID/non_valid_hole.cub
 
 # Weird PNGs
 
-# Weird XPMs
+# Weird XPMs ?
