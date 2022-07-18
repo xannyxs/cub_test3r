@@ -38,13 +38,18 @@ check_if_valid()
 		echo #Newline
 	else
 		printf "\e[1;32mSUCCES!\e[0m\n"
+		kill -INT ${_pid}
 	fi
-	kill -INT ${_pid}
 }
 
 run_valid_map()
 {
 	$EXE $1 & _pid=$!
+	if ps | grep " ${_pid} "
+	do
+		echo "${_pid} is still in the ps output. Must still be running."
+		sleep 0.5
+	wait $my_pid
 	EXIT_CODE=$?
 	check_if_valid
 }

@@ -28,6 +28,10 @@ run_valid_map MAPS/VALID/valid_hole.cub
 run_valid_map MAPS/VALID/42.cub
 run_valid_map MAPS/VALID/corridor.cub
 run_valid_map MAPS/VALID/subject.cub
+run_valid_map MAPS/VALID/spaces_start.cub
+run_valid_map MAPS/VALID/spaces_end.cub
+run_valid_map MAPS/VALID/spaces_end2.cub
+run_valid_map MAPS/VALID/some_weird_stuff.cub
 
 # NON_VALID MAPS
 echo #Newline
