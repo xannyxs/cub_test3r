@@ -1,6 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    start_test3r.sh                                    :+:    :+:             #
+#                                                      +:+                     #
+#    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
+#    Updated: 2022/07/22 16:33:36 by xvoorvaa      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 #!/usr/bin/env bash
 
 source PRIVATE/script_functions.sh
+source PRIVATE/test_messages.sh
 
 # -- PUBLIC --
 
@@ -20,30 +33,42 @@ make -C $1
 echo #newline
 
 # Valid MAPS
-echo "VALID MAPS"
-run_valid_map MAPS/VALID/basic.cub
-run_valid_map MAPS/VALID/big_map.cub
-run_valid_map MAPS/VALID/double_extension.cub.cub
-run_valid_map MAPS/VALID/valid_hole.cub
-run_valid_map MAPS/VALID/42.cub
-run_valid_map MAPS/VALID/corridor.cub
-run_valid_map MAPS/VALID/subject.cub
-run_valid_map MAPS/VALID/spaces_start.cub
-run_valid_map MAPS/VALID/spaces_end.cub
-run_valid_map MAPS/VALID/spaces_end2.cub
-run_valid_map MAPS/VALID/some_weird_stuff.cub
+printf "\n${BLUEBG}${WHITE}Beginning With Valid Map Test${RESET}\n"
+run_valid_map MAPS/VALID/basic.cub "$BASIC_MAP" #1
+run_valid_map MAPS/VALID/big_map.cub "$BIG_MAP" #2
+run_valid_map MAPS/VALID/double_extension.cub.cub "$DOUBLE_EXT" #3
+run_valid_map MAPS/VALID/valid_hole.cub "$VALID_HOLE" #4
+run_valid_map MAPS/VALID/42.cub "$SCHOOL_MAP" #5
+run_valid_map MAPS/VALID/corridor.cub "$CORRIDOR" #6
+run_valid_map MAPS/VALID/subject.cub "$SUBJECT" #7
+run_valid_map MAPS/VALID/spaces_start.cub "$SPACES_START" #8
+run_valid_map MAPS/VALID/spaces_end.cub "$SPACES_END" #9
+run_valid_map MAPS/VALID/spaces_end2.cub "$SPACES_END2" #10
+run_valid_map MAPS/VALID/some_weird_stuff.cub "$WEIRD" #11
 
-# NON_VALID MAPS
+# # NON_VALID MAPS
+printf "\n${BLUEBG}${WHITE}Now We Check The Invalid Map Test${RESET}\n"
+run_non_valid_map MAPS/NONVALID/empty.cub "$EMPTY" #12
+run_non_valid_map MAPS/NONVALID/wrong_extension.ber "$WRONG_EXT" #13
+run_non_valid_map MAPS/NONVALID/wrong_extension2.cub.ber "$WRONG_EXT2" #14
+run_non_valid_map MAPS/NONVALID/noplayer.cub "$NO_PLAYER" #15
+run_non_valid_map MAPS/NONVALID/two_player.cub "$TOO_MANY_PLAYERS" #16
+run_non_valid_map MAPS/NONVALID/unknown_char.cub "$UNKNOWN" #17
+run_non_valid_map MAPS/NONVALID/non_valid_hole.cub "$INVALID_HOLE" #18
+run_non_valid_map MAPS/NONVALID/wrong_path.cub "$WRONG_PATH" #19
+run_non_valid_map MAPS/NONVALID/wrong_path_colours.cub "$WRONG_VALUE_COLOUR" #20
+run_non_valid_map MAPS/NONVALID/wrong_input_colours.cub "$WRONG_INPUT_COLOUR" #21
+run_non_valid_map MAPS/WEIRD_PNG/non_png.cub "$NON_PNG" #22
+
 echo #Newline
-echo "NON VALID MAPS"
-run_non_valid_map MAPS/NONVALID/empty.cub
-run_non_valid_map MAPS/NONVALID/wrong_extension.ber
-run_non_valid_map MAPS/NONVALID/wrong_extension2.cub.ber
-run_non_valid_map MAPS/NONVALID/noplayer.cub
-run_non_valid_map MAPS/NONVALID/two_player.cub
-run_non_valid_map MAPS/NONVALID/unknown_char.cub
-run_non_valid_map MAPS/NONVALID/non_valid_hole.cub
 
 # Weird PNGs
+printf "\n${BLUEBG}${WHITE}Check PNGs Now${RESET}\n"
+printf "${BLUEBG}${WHITE}We Need Your Help With This One.${RESET}\n"
+printf "${BLUEBG}${WHITE}Please check if the game runs, as it should${RESET}\n"
+run_weird_png MAPS/VALID/subject.cub "$NORMAL_PNG" #23
+run_weird_png MAPS/WEIRD_PNG/one_pixel.cub "$ONE_PIXEL" #24
+run_weird_png MAPS/WEIRD_PNG/transparent.cub "$TRANSPARENT" #25
+run_weird_png MAPS/WEIRD_PNG/rotated.cub "$ROTATED" #26
 
 # Weird XPMs ?

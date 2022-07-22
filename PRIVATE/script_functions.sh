@@ -1,57 +1,92 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    script_functions.sh                                :+:    :+:             #
+#                                                      +:+                     #
+#    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/07/19 16:17:39 by xvoorvaa      #+#    #+#                  #
+#    Updated: 2022/07/22 16:49:53 by xvoorvaa      ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 #!/usr/bin/env bash
 
 # -- PRIVATE --
 
+CYAN="\033[0;36m"
+PURP="\033[0;35m"
+BGREEN='\033[1;32m' 
+RED="\033[0;31m"
+BLUE="\033[0;34m"
+BLUEBG="\033[44m"
+WHITE="\033[1;97m"
+RESET="\033[0m"
+
 EXE=$1/cub3d
-i=1
+TNUM=1
+MAXT=26
 
 # Functions
 check_if_non_valid()
 {
-	printf "\e[1mTEST $i: \e[0m"
-	let "i=i+1"
-	if [ $EXIT_CODE -eq 0 ]; then
-		printf "\e[31mERROR\e[0m\n"
+	printf "\n${WHITE}TEST $TNUM/$MAXT: ${PURP}|| ${CYAN}$1\n"
+	((TNUM+=1))
+	kill -0 ${_pid} 2> /dev/null
+	if [ $? -eq 0 ]; then
+		printf ${RED}"ERROR\n${RESET}"
 		echo "Did not return an error or exit code is wrong"
 		echo "Should atleast be > 0"
+		kill $_pid
+		wait $_pid 2> /dev/null
+		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}"
 		echo #Newline
 	else
-		printf "\e[1;32mSUCCES!\e[0m\n"
+		printf "${BGREEN}Succes!${RESET}\n"
 	fi
 }
 
 run_non_valid_map()
 {
-	$EXE $1 2> /dev/null
+	$EXE $1 2> /dev/null & _pid=$!
 	EXIT_CODE=$?
-	check_if_non_valid
+	sleep 0.1
+	check_if_non_valid "$1" "$2"
 }
 
 check_if_valid()
 {
-	printf "\e[1mTEST $i: \e[0m"
-	let "i=i+1"
-	if [ ! $EXIT_CODE -eq 0 ]; then
-		printf "\e[31mERROR\e[0m\n"
-		echo "You returned an error or returned the wrong exit code"
-		echo "Should be 0"
-		echo #Newline
+	printf "\n${WHITE}TEST $TNUM/$MAXT: ${PURP}|| ${CYAN}$2\n"
+	((TNUM+=1))
+	kill -0 ${_pid} 2> /dev/null
+	if [ $? -eq 0 ]; then
+		printf "${BGREEN}Succes!${RESET}\n"
+		kill $_pid
+		wait $_pid 2> /dev/null
 	else
-		printf "\e[1;32mSUCCES!\e[0m\n"
-		kill -INT ${_pid}
+		printf ${RED}"ERROR\n${RESET}"
+		echo "Did not return an error or exit code is wrong"
+		echo "Should atleast be > 0"
+		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}"
+		echo #Newline
 	fi
 }
 
 run_valid_map()
 {
+	$EXE $1 2> /dev/null & _pid=$!
+	sleep 0.1 # Needed for bash. Otherwise we are too quick
+	check_if_valid "$1" "$2"
+}
+
+run_weird_png()
+{
+	printf "\n${WHITE}TEST $TNUM/$MAXT:\n"
+	printf "${CYAN}$2${RESET}\n"
+	((TNUM+=1))
 	$EXE $1 & _pid=$!
-	if ps | grep " ${_pid} "
-	do
-		echo "${_pid} is still in the ps output. Must still be running."
-		sleep 0.5
-	wait $my_pid
-	EXIT_CODE=$?
-	check_if_valid
+	sleep 0.1
+	wait $_pid
 }
 
 ### END FUNCTIONS
