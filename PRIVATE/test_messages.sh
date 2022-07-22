@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 16:39:10 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/22 17:06:41 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SPACES_START="VALID: Putting spaces at the start of the map"
 SPACES_END="VALID: Putting spaces at the end of the map"
 SPACES_END2="VALID: Putting spaces and walls at the end of the map"
 WEIRD="VALID: Making the most random map"
+NEWLINE="VALID: Putting a lot of newlines"
+ORDER="VALID: Weird ass order in file"
 
 EMPTY="INVALID: Empty map"
 WRONG_EXT="INVALID: Wrong extension"

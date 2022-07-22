@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:17:39 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 16:49:53 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/22 17:11:53 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RESET="\033[0m"
 
 EXE=$1/cub3d
 TNUM=1
-MAXT=26
+MAXT=28
 
 # Functions
 check_if_non_valid()

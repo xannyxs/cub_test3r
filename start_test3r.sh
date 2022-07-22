@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 16:33:36 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/22 17:05:58 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,8 @@ run_valid_map MAPS/VALID/spaces_start.cub "$SPACES_START" #8
 run_valid_map MAPS/VALID/spaces_end.cub "$SPACES_END" #9
 run_valid_map MAPS/VALID/spaces_end2.cub "$SPACES_END2" #10
 run_valid_map MAPS/VALID/some_weird_stuff.cub "$WEIRD" #11
+run_valid_map MAPS/VALID/double_newline.cub "$NEWLINE" #12
+run_valid_map MAPS/VALID/different_order.cub "$ORDER" #13
 
 # # NON_VALID MAPS
 printf "\n${BLUEBG}${WHITE}Now We Check The Invalid Map Test${RESET}\n"
