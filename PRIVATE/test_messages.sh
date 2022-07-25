@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/25 18:32:53 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/25 18:40:25 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ WRONG_INPUT_COLOUR="INVALID: Missing a digit for the colours"
 NON_PNG="INVALID: Non-PNG"
 DIR_CUB="INVALID: Opening a directory.cub"
 NEGA_COLOUR="INVALID: Negative input in the colour section"
+GIBBERISH="INVALID: Put gibberish in colour input"
 TOO_MANY_PATHS="INVALID: Have more than four paths"
 TOO_FEW_PATHS="INVALID: Have less than four paths"
 

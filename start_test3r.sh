@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/25 17:48:23 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/25 18:41:02 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ run_non_valid_map MAPS/NONVALID/wrong_input_colours.cub "$WRONG_INPUT_COLOUR" #2
 run_non_valid_map MAPS/NONVALID/non_png.cub "$NON_PNG" #24
 run_non_valid_map MAPS/NONVALID/dir.cub "$DIR_CUB" #25
 run_non_valid_map MAPS/NONVALID/negative_colour.cub "$NEGA_COLOUR"
+run_non_valid_map MAPS/NONVALID/wrong_input_colours2.cub "$GIBBERISH"
 run_non_valid_map MAPS/NONVALID/too_many_paths.cub "$TOO_MANY_PATHS"
 run_non_valid_map MAPS/NONVALID/too_few_paths.cub "$TOO_FEW_PATHS"
 
