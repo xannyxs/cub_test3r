@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 17:05:58 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/25 17:48:23 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,17 +50,21 @@ run_valid_map MAPS/VALID/different_order.cub "$ORDER" #13
 
 # # NON_VALID MAPS
 printf "\n${BLUEBG}${WHITE}Now We Check The Invalid Map Test${RESET}\n"
-run_non_valid_map MAPS/NONVALID/empty.cub "$EMPTY" #12
-run_non_valid_map MAPS/NONVALID/wrong_extension.ber "$WRONG_EXT" #13
-run_non_valid_map MAPS/NONVALID/wrong_extension2.cub.ber "$WRONG_EXT2" #14
-run_non_valid_map MAPS/NONVALID/noplayer.cub "$NO_PLAYER" #15
-run_non_valid_map MAPS/NONVALID/two_player.cub "$TOO_MANY_PLAYERS" #16
-run_non_valid_map MAPS/NONVALID/unknown_char.cub "$UNKNOWN" #17
-run_non_valid_map MAPS/NONVALID/non_valid_hole.cub "$INVALID_HOLE" #18
-run_non_valid_map MAPS/NONVALID/wrong_path.cub "$WRONG_PATH" #19
-run_non_valid_map MAPS/NONVALID/wrong_path_colours.cub "$WRONG_VALUE_COLOUR" #20
-run_non_valid_map MAPS/NONVALID/wrong_input_colours.cub "$WRONG_INPUT_COLOUR" #21
-run_non_valid_map MAPS/WEIRD_PNG/non_png.cub "$NON_PNG" #22
+run_non_valid_map MAPS/NONVALID/empty.cub "$EMPTY" #14
+run_non_valid_map MAPS/NONVALID/wrong_extension.ber "$WRONG_EXT" #15
+run_non_valid_map MAPS/NONVALID/wrong_extension2.cub.ber "$WRONG_EXT2" #16
+run_non_valid_map MAPS/NONVALID/noplayer.cub "$NO_PLAYER" #17
+run_non_valid_map MAPS/NONVALID/two_player.cub "$TOO_MANY_PLAYERS" #18
+run_non_valid_map MAPS/NONVALID/unknown_char.cub "$UNKNOWN" #19
+run_non_valid_map MAPS/NONVALID/non_valid_hole.cub "$INVALID_HOLE" #20
+run_non_valid_map MAPS/NONVALID/wrong_path.cub "$WRONG_PATH" #21
+run_non_valid_map MAPS/NONVALID/wrong_path_colours.cub "$WRONG_VALUE_COLOUR" #22
+run_non_valid_map MAPS/NONVALID/wrong_input_colours.cub "$WRONG_INPUT_COLOUR" #23
+run_non_valid_map MAPS/NONVALID/non_png.cub "$NON_PNG" #24
+run_non_valid_map MAPS/NONVALID/dir.cub "$DIR_CUB" #25
+run_non_valid_map MAPS/NONVALID/negative_colour.cub "$NEGA_COLOUR"
+run_non_valid_map MAPS/NONVALID/too_many_paths.cub "$TOO_MANY_PATHS"
+run_non_valid_map MAPS/NONVALID/too_few_paths.cub "$TOO_FEW_PATHS"
 
 echo #Newline
 
@@ -72,5 +76,4 @@ run_weird_png MAPS/VALID/subject.cub "$NORMAL_PNG" #23
 run_weird_png MAPS/WEIRD_PNG/one_pixel.cub "$ONE_PIXEL" #24
 run_weird_png MAPS/WEIRD_PNG/transparent.cub "$TRANSPARENT" #25
 run_weird_png MAPS/WEIRD_PNG/rotated.cub "$ROTATED" #26
-
-# Weird XPMs ?
+run_weird_png MAPS/WEIRD_PNG/black_floor_and_ceiling.cub "$BLACK_F_AND_C"

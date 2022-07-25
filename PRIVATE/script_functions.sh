@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:17:39 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 17:11:53 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/25 18:31:22 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RESET="\033[0m"
 
 EXE=$1/cub3d
 TNUM=1
-MAXT=28
+MAXT=33
 
 # Functions
 check_if_non_valid()
@@ -39,8 +39,7 @@ check_if_non_valid()
 		echo "Should atleast be > 0"
 		kill $_pid
 		wait $_pid 2> /dev/null
-		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}"
-		echo #Newline
+		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}\n"
 	else
 		printf "${BGREEN}Succes!${RESET}\n"
 	fi
@@ -49,8 +48,7 @@ check_if_non_valid()
 run_non_valid_map()
 {
 	$EXE $1 2> /dev/null & _pid=$!
-	EXIT_CODE=$?
-	sleep 0.1
+	sleep 0.3
 	check_if_non_valid "$1" "$2"
 }
 
@@ -58,7 +56,7 @@ check_if_valid()
 {
 	printf "\n${WHITE}TEST $TNUM/$MAXT: ${PURP}|| ${CYAN}$2\n"
 	((TNUM+=1))
-	kill -0 ${_pid} 2> /dev/null
+	kill -0 ${_pid}
 	if [ $? -eq 0 ]; then
 		printf "${BGREEN}Succes!${RESET}\n"
 		kill $_pid
@@ -67,8 +65,7 @@ check_if_valid()
 		printf ${RED}"ERROR\n${RESET}"
 		echo "Did not return an error or exit code is wrong"
 		echo "Should atleast be > 0"
-		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}"
-		echo #Newline
+		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}\n"
 	fi
 }
 
@@ -85,7 +82,7 @@ run_weird_png()
 	printf "${CYAN}$2${RESET}\n"
 	((TNUM+=1))
 	$EXE $1 & _pid=$!
-	sleep 0.1
+	sleep 0.2
 	wait $_pid
 }
 

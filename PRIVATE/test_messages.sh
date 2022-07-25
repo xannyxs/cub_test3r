@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/22 17:06:41 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/25 18:32:53 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,14 @@ INVALID_HOLE="INVALID: Invalid hole"
 WRONG_PATH="INVALID: Wrong path of IMG"
 WRONG_VALUE_COLOUR="INVALID: Colour value too high"
 WRONG_INPUT_COLOUR="INVALID: Missing a digit for the colours"
-NON_PNG="Non-PNG"
+NON_PNG="INVALID: Non-PNG"
+DIR_CUB="INVALID: Opening a directory.cub"
+NEGA_COLOUR="INVALID: Negative input in the colour section"
+TOO_MANY_PATHS="INVALID: Have more than four paths"
+TOO_FEW_PATHS="INVALID: Have less than four paths"
 
 NORMAL_PNG="This should just run as a normal cub3d"
-ONE_PIXEL="One pixel PNG. One wall should be completly black"
-TRANSPARENT="Fully transparent PNG. Transparent parts should be black"
+ONE_PIXEL="One pixel PNG. One wall should be completly blue"
+TRANSPARENT="Transparent PNG. Transparent parts should be black (IMO)"
 ROTATED="Rotated PNG. The pillar should be rotated"
+BLACK_F_AND_C="Colour value of the floor and ceiling are both zero. Both should be black"
