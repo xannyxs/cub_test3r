@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:17:39 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/25 18:31:22 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/26 17:22:15 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ MAXT=33
 check_if_non_valid()
 {
 	printf "\n${WHITE}TEST $TNUM/$MAXT: ${PURP}|| ${CYAN}$1\n"
+	printf "${CYAN}$2\n"
 	((TNUM+=1))
 	kill -0 ${_pid} 2> /dev/null
 	if [ $? -eq 0 ]; then

@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/25 18:40:25 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/26 17:18:32 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ NEGA_COLOUR="INVALID: Negative input in the colour section"
 GIBBERISH="INVALID: Put gibberish in colour input"
 TOO_MANY_PATHS="INVALID: Have more than four paths"
 TOO_FEW_PATHS="INVALID: Have less than four paths"
+PATH_NAME="INVALID: NO & WE are N & W"
 
 NORMAL_PNG="This should just run as a normal cub3d"
 ONE_PIXEL="One pixel PNG. One wall should be completly blue"
