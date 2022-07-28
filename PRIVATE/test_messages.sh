@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/27 16:33:03 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/28 17:35:31 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 
 # -- PUBLIC --
 
+#VALID
 BASIC_MAP="VALID: A super basic map"
 BIG_MAP="VALID: A basic map, but bigger!"
 DOUBLE_EXT="VALID: A double extension: *.cub.cub"
@@ -28,6 +29,7 @@ WEIRD="VALID: Making the most random map"
 NEWLINE="VALID: Putting a lot of newlines"
 ORDER="VALID: Weird ass order in file"
 
+#NONVALID
 EMPTY="INVALID: Empty map"
 WRONG_EXT="INVALID: Wrong extension"
 WRONG_EXT2="INVALID: Wrong extension 2.0"
@@ -46,7 +48,9 @@ TOO_MANY_PATHS="INVALID: Have more than four paths"
 TOO_FEW_PATHS="INVALID: Have less than four paths"
 PATH_NAME="INVALID: NO & WE are N & W"
 ONLY_CUB="INVALID: File name with just .cub"
+ONLY_MAP="INVALID: No data given by user"
 
+#VISUAL CHECk
 NORMAL_PNG="This should just run as a normal cub3d"
 ONE_PIXEL="One pixel PNG. One wall should be completly blue"
 TRANSPARENT="Transparent PNG. Transparent parts should be black (IMO)"

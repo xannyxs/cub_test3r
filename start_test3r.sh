@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/27 16:34:08 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/07/28 17:35:56 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ run_non_valid_map MAPS/NONVALID/too_many_paths.cub "$TOO_MANY_PATHS" #28
 run_non_valid_map MAPS/NONVALID/too_few_paths.cub "$TOO_FEW_PATHS" #29
 run_non_valid_map MAPS/NONVALID/path_name.cub "$PATH_NAME" #30
 run_non_valid_map MAPS/NONVALID/.cub "$ONLY_CUB" #31
+run_non_valid_map MAPS/NONVALID/only_map.cub "$ONLY_MAP" #32
 
 echo #Newline
 
@@ -75,8 +76,8 @@ echo #Newline
 printf "\n${BLUEBG}${WHITE}Check PNGs Now${RESET}\n"
 printf "${BLUEBG}${WHITE}We Need Your Help With This One.${RESET}\n"
 printf "${BLUEBG}${WHITE}Please check if the game runs, as it should${RESET}\n"
-run_weird_png MAPS/VALID/subject.cub "$NORMAL_PNG" #32
-run_weird_png MAPS/WEIRD_PNG/one_pixel.cub "$ONE_PIXEL" #33
-run_weird_png MAPS/WEIRD_PNG/transparent.cub "$TRANSPARENT" #34
-run_weird_png MAPS/WEIRD_PNG/rotated.cub "$ROTATED" #35
-run_weird_png MAPS/WEIRD_PNG/black_floor_and_ceiling.cub "$BLACK_F_AND_C" #36
+run_weird_png MAPS/VALID/subject.cub "$NORMAL_PNG" #33
+run_weird_png MAPS/WEIRD_PNG/one_pixel.cub "$ONE_PIXEL" #34
+run_weird_png MAPS/WEIRD_PNG/transparent.cub "$TRANSPARENT" #35
+run_weird_png MAPS/WEIRD_PNG/rotated.cub "$ROTATED" #36
+run_weird_png MAPS/WEIRD_PNG/black_floor_and_ceiling.cub "$BLACK_F_AND_C" #37
