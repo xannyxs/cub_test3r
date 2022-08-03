@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+.idea/cub_test3r.iml
+.idea/modules.xml
+.idea/vcs.xml

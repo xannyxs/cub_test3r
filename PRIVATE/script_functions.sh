@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:17:39 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/28 17:36:08 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/08/03 18:03:13 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RESET="\033[0m"
 
 EXE=$1/cub3d
 TNUM=1
-MAXT=37
+MAXT=44
 
 # Functions
 check_if_non_valid()
@@ -63,8 +63,8 @@ check_if_valid()
 		wait $_pid 2> /dev/null
 	else
 		printf ${RED}"ERROR\n${RESET}"
-		echo "Did not return an error or exit code is wrong"
-		echo "Should atleast be > 0"
+		echo "returned an error or exit code"
+		echo "It should be == 0"
 		printf "${BLUEBG}${WHITE}Check $1 for more information${RESET}\n"
 	fi
 }
@@ -72,7 +72,7 @@ check_if_valid()
 run_valid_map()
 {
 	$EXE $1 2> /dev/null & _pid=$!
-	sleep 0.1 # Needed for bash. Otherwise we are too quick
+	sleep 0.3 # Needed for bash. Otherwise we are too quick
 	check_if_valid "$1" "$2"
 }
 

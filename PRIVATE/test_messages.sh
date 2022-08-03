@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:12 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/28 17:35:31 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/08/03 18:02:45 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ SCHOOL_MAP="VALID: A map with 42 in it!"
 CORRIDOR="VALID: A corridor. Nothing special"
 SUBJECT="VALID: Subject map..."
 SPACES_START="VALID: Putting spaces at the start of the map"
+SPACES_START2="VALID: Putting spaces just before the path"
+SPACES_AFTER_PATH="VALID: Putting spaces after the path"
+SPACE_DIGITS="VALID: Space between the digits of floor"
 SPACES_END="VALID: Putting spaces at the end of the map"
 SPACES_END2="VALID: Putting spaces and walls at the end of the map"
 WEIRD="VALID: Making the most random map"
@@ -49,6 +52,10 @@ TOO_FEW_PATHS="INVALID: Have less than four paths"
 PATH_NAME="INVALID: NO & WE are N & W"
 ONLY_CUB="INVALID: File name with just .cub"
 ONLY_MAP="INVALID: No data given by user"
+WRONG_SECONDCHAR="INVALID: 'NL' instead of NO"
+REMOVE_FLOOR="INVALID: Removed the floor line"
+WRONG_CHAR_COLOUR="INVALID: One colour input is 20+20, shouldn't work"
+MINUS_ZERO="INVALID: One colour input is -0, shouldn't work"
 
 #VISUAL CHECk
 NORMAL_PNG="This should just run as a normal cub3d"

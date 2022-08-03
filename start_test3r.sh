@@ -6,7 +6,7 @@
 #    By: xvoorvaa <xvoorvaa@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/07/19 16:18:53 by xvoorvaa      #+#    #+#                  #
-#    Updated: 2022/07/28 17:35:56 by xvoorvaa      ########   odam.nl          #
+#    Updated: 2022/08/03 18:03:07 by xvoorvaa      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,14 @@ run_valid_map MAPS/VALID/42.cub "$SCHOOL_MAP" #5
 run_valid_map MAPS/VALID/corridor.cub "$CORRIDOR" #6
 run_valid_map MAPS/VALID/subject.cub "$SUBJECT" #7
 run_valid_map MAPS/VALID/spaces_start.cub "$SPACES_START" #8
-run_valid_map MAPS/VALID/spaces_end.cub "$SPACES_END" #9
-run_valid_map MAPS/VALID/spaces_end2.cub "$SPACES_END2" #10
-run_valid_map MAPS/VALID/some_weird_stuff.cub "$WEIRD" #11
-run_valid_map MAPS/VALID/double_newline.cub "$NEWLINE" #12
-run_valid_map MAPS/VALID/different_order.cub "$ORDER" #13
+run_valid_map MAPS/VALID/spaces_start2.cub "$SPACES_START2" #9
+run_valid_map MAPS/VALID/spaces_after_path.cub "$SPACES_AFTER_PATH" #10
+run_valid_map MAPS/VALID/space_between_digits.cub "$SPACE_DIGITS" #10
+run_valid_map MAPS/VALID/spaces_end.cub "$SPACES_END" #10
+run_valid_map MAPS/VALID/spaces_end2.cub "$SPACES_END2" #11
+run_valid_map MAPS/VALID/some_weird_stuff.cub "$WEIRD" #12
+run_valid_map MAPS/VALID/double_newline.cub "$NEWLINE" #13
+run_valid_map MAPS/VALID/different_order.cub "$ORDER" #14
 
 # # NON_VALID MAPS
 printf "\n${BLUEBG}${WHITE}Now We Check The Invalid Map Test${RESET}\n"
@@ -69,6 +72,10 @@ run_non_valid_map MAPS/NONVALID/too_few_paths.cub "$TOO_FEW_PATHS" #29
 run_non_valid_map MAPS/NONVALID/path_name.cub "$PATH_NAME" #30
 run_non_valid_map MAPS/NONVALID/.cub "$ONLY_CUB" #31
 run_non_valid_map MAPS/NONVALID/only_map.cub "$ONLY_MAP" #32
+run_non_valid_map MAPS/NONVALID/wrong_secchar.cub "$WRONG_SECONDCHAR" #33
+run_non_valid_map MAPS/NONVALID/remove_floor.cub "$REMOVE_FLOOR" #34
+run_non_valid_map MAPS/NONVALID/wrong_char_in_colour.cub "$WRONG_CHAR_COLOUR" #35
+run_non_valid_map MAPS/NONVALID/minus_zero.cub "$MINUS_ZERO" #35
 
 echo #Newline
 
